@@ -20,12 +20,12 @@ SoftwareSerial wifiSerial(2,3);
 WiFly wifly;
 
 /* Change these to match your WiFi network */
-const char mySSID[] = "your_ssid";
-const char myPassword[] = "your_password";
+const char mySSID[] = "OLIN_GUEST";
+const char myPassword[] = "The_Phoenix_Flies";
 
 //const char site[] = "arduino.cc";
 //const char site[] = "www.google.co.nz";
-const char site[] = "notificationbutton.herokuapp.com";
+const char site[] = "notificationlight.herokuapp.com";
 int light = 12; // define our light
 
 void terminal();
