@@ -147,8 +147,8 @@ app.get('/action/:user', function (req, res) {
 
       user('/me/notifications?').get(function(err, data){
         console.log("notifications", data);
-        res.setHeader('Content-Type', 'application/json');
-        res.write(JSON.stringify(data.summary));
+        res.setHeader('Content-Type', 'text/html');
+        res.write(String(data.summary.unseen_count));
         res.end();
       });
     });
