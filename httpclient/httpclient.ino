@@ -20,20 +20,23 @@ SoftwareSerial wifiSerial(2,3);
 WiFly wifly;
 
 /* Change these to match your WiFi network */
-const char mySSID[] = "OLIN_GUEST";
-const char myPassword[] = "The_Phoenix_Flies";
+const char mySSID[] = "your_ssid";
+const char myPassword[] = "your_password";
 
 //const char site[] = "arduino.cc";
 //const char site[] = "www.google.co.nz";
 const char site[] = "notificationlight.herokuapp.com";
 int light = 12; // define our light
-
+boolean check_next = false;
+long curr_loop = 0;
+long MAX_LOOP = 100000;
 void terminal();
+char prev_ch;
 
 void setup()
 {
     char buf[32];
-    boolean first = false;
+    
     Serial.begin(9600);
     pinMode(light, OUTPUT);
 
@@ -91,37 +94,45 @@ void setup()
     } else {
         Serial.println("Failed to connect");
     }
+    // send off the get request
+    
 }
 
 void loop()
 {
-    first = true;
-    if (wifly.available() > 0) {
+    if(wifly.available() > 0) {
 	char ch = wifly.read();
-	Serial.write(ch);
-	if (ch == '\n') {
-	    /* add a carriage return */ 
-	    Serial.write('\r');
-	}
-        if (first) {
-          if (atoi(ch) > 0) {
+        Serial.write(ch);
+        if (check_next) {
+          
+          if (isdigit(ch) && atoi(&ch) > 0) {
             // turn on the light
             digitalWrite(light, HIGH);
-            
-          } else {
+          } else if (isdigit(ch) && atoi(&ch) == 0) {
             // turn off the light
-            digitalWrite(light, HIGH);
+            digitalWrite(light, LOW);
           }
+          check_next = false;
         }
-        first = false;
+	if (ch == '\n') {
+	  Serial.write('\r');
+          check_next = true;
+	}
     }
     
-    // send off the get request
-    wifly.println("GET /action/your_number HTTP/1.1"); // paste your number here
-    
-    delay(5000); // delay for a bit before we check again
+    if (curr_loop > MAX_LOOP){
+      curr_loop = 0;
+      getRequest();
+    }
+    curr_loop++;
 }
 
+void getRequest(){
+  wifly.println("GET /action/60ce6bdda1e131973c722d0906524b2ed24c44a6 HTTP/1.1"); // paste your number here
+  wifly.println("Host: notificationlight.herokuapp.com:80");
+  wifly.println("User-Agent: lifegraph/0.0.1");
+  wifly.println();
+}
 /* Connect the WiFly serial to the serial monitor. */
 void terminal()
 {
