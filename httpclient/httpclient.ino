@@ -128,7 +128,7 @@ void loop()
 }
 
 void getRequest(){
-  wifly.println("GET /action/60ce6bdda1e131973c722d0906524b2ed24c44a6 HTTP/1.1"); // paste your number here
+  wifly.println("GET /action/your_number HTTP/1.1"); // paste your number here
   wifly.println("Host: notificationlight.herokuapp.com:80");
   wifly.println("User-Agent: lifegraph/0.0.1");
   wifly.println();
