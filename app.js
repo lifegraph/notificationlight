@@ -9,7 +9,7 @@ var rem = require('rem')
 var app = express();
 
 app.configure(function () {
-  app.set('port',  3000); // sets up the port
+  app.set('port', process.env.PORT || 3000); // sets up the port
   app.set('host', process.env.HOST || ('localhost:' + app.get('port')));
   app.use(express.cookieParser());
   app.use(express.session({
