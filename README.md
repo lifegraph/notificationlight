@@ -22,7 +22,7 @@ const char myPassword[] = "your_password";
 
 Now we need to go to [http://notificationlight.herokuapp.com/](http://notificationlight.herokuapp.com/) and login via facebook. You'll see something like this
 
-![notification light](https://raw.github.com/lifegraph/notification-light/imgs/notificationlight.png)
+![notification light](https://raw.github.com/lifegraph/notification-light/master/imgs/notificationlight.png)
 
 Now copy and paste the action number into this line here
 
