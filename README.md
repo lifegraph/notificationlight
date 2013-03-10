@@ -11,14 +11,29 @@
 ## Setting up the circuit
 Wire up the LED in series with the resistor betweein Pin 12 and the ground pin of the Arduino. The [WiFly module can be attached to your Arduino by soldering to the TX/RX/VCC/GND pins](https://github.com/lifegraph/graphbutton-wifly#soldering-the-wifly-xbee-form-factor)
 
-## The Arduino Code
-Open up the httpclient.ino file. You need to put in your own network id and password in here
+## Making HTTP Requests
+
+We'll be using [WiFlyHQ](https://github.com/harlequin-tech/WiFlyHQ) as our library for interfacing with the WiFly module. This allows us to talk to the WiFly over serial.
+
+In order to setup WiFlyHQ, you'll need to download it to your Arduino libaries. On OSX this is typically in `~/Documents/Arduino/libaries/`. If you don't have a library folder, you'll need to make one. 
+
+```
+cd ~/Documents/Arduino/libraries;
+git clone https://github.com/harlequin-tech/WiFlyHQ;
+```
+
+After you add the library, you'll need to restart the Arduino IDE for it to pick up the library. If you've added it in the right place, you should be able to see the WiFlyHQ library if you go to Sketch -> Import Library.
+
+After you have the library working, you'll need to open up the [httpclient example in this repo](https://github.com/lifegraph/notificationlight/blob/master/httpclient/httpclient.ino) and open it up with the Arduino IDE. 
+
+In `httpclient.ino`, you'll need to change the SSID (name of your network) and the password to work with your own WiFi network:
 
 ```ino
-/* Change these to match your WiFi network */
 const char mySSID[] = "your_ssid";
 const char myPassword[] = "your_password";
 ```
+
+## The Arduino Code
 
 Now we need to go to [http://notificationlight.herokuapp.com/](http://notificationlight.herokuapp.com/) and login via facebook. You'll see something like this
 
