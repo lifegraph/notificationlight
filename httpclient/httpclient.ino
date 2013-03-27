@@ -14,17 +14,12 @@
 #include <SoftwareSerial.h>
 SoftwareSerial wifiSerial(2,3);
 
-//#include <AltSoftSerial.h>
-//AltSoftSerial wifiSerial(8,9);
-
 WiFly wifly;
 
 /* Change these to match your WiFi network */
 const char mySSID[] = "your_ssid";
 const char myPassword[] = "your_password";
 
-//const char site[] = "arduino.cc";
-//const char site[] = "www.google.co.nz";
 const char site[] = "notificationlight.herokuapp.com";
 int light = 12; // define our light
 boolean check_next = false;
