@@ -70,4 +70,4 @@ $ heroku config:add FB_SECRET=the secret
 
 ## Further examples
 
-* [Notification light](https://github.com/lifegraph/notificationlight) - a light that lights up when you have a new facebook notification
+* [GraphButton](https://github.com/lifegraph/graphbutton-wifly) - press the button and have it post a message to your Facebook
