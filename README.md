@@ -14,14 +14,13 @@ a light that gets FB notifications
 
 Completed the [hardware tutorial](https://github.com/lifegraph/hw-tutorial) and have a set up Arduino that can talk to the internet. 
 
-## Setting up the circuit
-Wire up the LED in series with the resistor betweein Pin 12 and the ground pin of the Arduino. The [WiFly module can be attached to your Arduino by soldering to the TX/RX/VCC/GND pins](https://github.com/lifegraph/graphbutton-wifly#soldering-the-wifly-xbee-form-factor)
-
 ## Making HTTP Requests
 
 We'll be using [WiFlyHQ](https://github.com/harlequin-tech/WiFlyHQ) as our library for interfacing with the WiFly module. The setup of the library is covered in the [hardware tutorial](https://github.com/lifegraph/hw-tutorial).
 
-## The Arduino Code
+## The Arduino
+
+Wire up the LED in series with the resistor betweein Pin 12 and the ground pin of the Arduino.
 
 Now we need to go to [http://notificationlight.herokuapp.com/](http://notificationlight.herokuapp.com/) and login via facebook. You'll see something like this
 
