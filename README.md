@@ -22,6 +22,13 @@ We'll be using [WiFlyHQ](https://github.com/harlequin-tech/WiFlyHQ) as our libra
 
 Wire up the LED in series with the resistor betweein Pin 12 and the ground pin of the Arduino.
 
+Then open up `httpclient.ino` from the [httpclient example in this repo](https://github.com/lifegraph/notificationlight/blob/master/httpclient/httpclient.ino). You'll need to change the network name and the password 
+
+```ino
+const char mySSID[] = "your_ssid";
+const char myPassword[] = "your_password";
+```
+
 Now we need to go to [http://notificationlight.herokuapp.com/](http://notificationlight.herokuapp.com/) and login via facebook. You'll see something like this
 
 ![notification light](https://raw.github.com/lifegraph/notificationlight/master/imgs/notificationlight.png)
