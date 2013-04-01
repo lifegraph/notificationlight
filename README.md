@@ -18,61 +18,33 @@ Completed the [hardware tutorial](https://github.com/lifegraph/hw-tutorial) and 
 
 We'll be using [WiFlyHQ](https://github.com/harlequin-tech/WiFlyHQ) as our library for interfacing with the WiFly module. The setup of the library is covered in the [hardware tutorial](https://github.com/lifegraph/hw-tutorial).
 
+We'll also be using the [Lifegraph Arduino library](https://github.com/lifegraph/arduino-lifegraph) along with the WiFlyHQ library. The Lifegraph library allows us to easily use Facebook's API without having to worry about properly formatting HTTP requests ourselves. The library also gives us a way to process the data that Facebook sends back to us.
+
+In order to install the library, you'll need to:
+1. [download the zip file here](https://github.com/lifegraph/arduino-lifegraph/archive/master.zip)
+2. Unzip the file
+3. Rename the folder from arduino-lifegraph-master to Lifegraph
+4. Put the folder where the rest of your Arduino libraries are. This is probably underneath `~/Documents/Arduino/libraries`
+5. Restart the Arduino IDE
+
+Now open the Arduino IDE and you should see the Lifegraph library as an option when you go to Sketch -> Import Library
+
 ## The Arduino
 
-Wire up the LED in series with the resistor betweein Pin 12 and the ground pin of the Arduino.
+Wire up the LED in series with the resistor betweein Pin 13 and the ground pin of the Arduino.
 
-Then open up `httpclient.ino` from the [httpclient example in this repo](https://github.com/lifegraph/notificationlight/blob/master/httpclient/httpclient.ino). You'll need to change the network name and the password 
+Then open up `notificationlight.ino` from the [notificationlight example in this repo](https://github.com/lifegraph/notificationlight/blob/master/notificationlight/notificationlight.ino). You'll need to change the network name and the password 
 
 ```ino
 const char mySSID[] = "your_ssid";
 const char myPassword[] = "your_password";
 ```
 
-Now we need to go to [http://notificationlight.herokuapp.com/](http://notificationlight.herokuapp.com/) and login via facebook. You'll see something like this
+We'll also need an authentication token from Facebook in order to get the right notification information. For a temporary access token, follow these steps:
+1. Go to the Graph API Explorer: [https://developers.facebook.com/tools/explorer](https://developers.facebook.com/tools/explorer)
+2. request a token with "manage_notifications" and "publish_stream" permissions.
 
-![notification light](https://raw.github.com/lifegraph/notificationlight/master/imgs/notificationlight.png)
-
-Now copy and paste the action number into this line here
-
-```ino
-void getRequest() {
-  wifly.println("GET /action/your_number HTTP/1.1"); // paste your number here
-  ...
-}
-```
-
-so it'll end up looking like
-
-```ino
-void getRequest() {
-  wifly.println("GET /action/60ce6bdda1e131973c722d0906524b2ed24c44a6 HTTP/1.1");
-  ...
-}
-```
-
-Now save and load up httpclient.ino onto your Arduino. If you have 1 or more notifications, the light should turn on. The Arduino code continously checks for notifications so as soon as you don't have anymore, the light turns off.
-
-## Running your own server
-
-The source code for the GraphButton server is open source, so you can fork it and start your own. To clone the repository:
-
-```
-$ git clone https://github.com/lifegraph/notification-light
-$ heroku create
-$ heroku config:add HOST=<heroku host>
-```
-
-###Creating a Facebook app
-
-1. Log into https://developers.facebook.com/apps. Click on `create a new application`. Name your application "Notification Light". 
-2. Go to your new facebook application and add heroku's host name in the `Website with Facebook Login` field. 
-3. Copy and paste the facebook app key and secret key into your Heroku configuration
-
-```
-$ heroku config:add FB_KEY=the key
-$ heroku config:add FB_SECRET=the secret
-```
+However, these tokens expire every hour. In order to get a longer lasting token you'll need to make your own Facebook application and get an auth token from there.
 
 ## Further examples
 
