@@ -21,6 +21,7 @@ We'll be using [WiFlyHQ](https://github.com/harlequin-tech/WiFlyHQ) as our libra
 We'll also be using the [Lifegraph Arduino library](https://github.com/lifegraph/arduino-lifegraph) along with the WiFlyHQ library. The Lifegraph library allows us to easily use Facebook's API without having to worry about properly formatting HTTP requests ourselves. The library also gives us a way to process the data that Facebook sends back to us.
 
 In order to install the library, you'll need to:
+
 1. [download the zip file here](https://github.com/lifegraph/arduino-lifegraph/archive/master.zip)
 2. Unzip the file
 3. Rename the folder from arduino-lifegraph-master to Lifegraph
@@ -41,8 +42,15 @@ const char myPassword[] = "your_password";
 ```
 
 We'll also need an authentication token from Facebook in order to get the right notification information. For a temporary access token, follow these steps:
+
 1. Go to the Graph API Explorer: [https://developers.facebook.com/tools/explorer](https://developers.facebook.com/tools/explorer)
 2. request a token with "manage_notifications" and "publish_stream" permissions.
+
+After you get your access token, you'll need to stick it in the `notificationlight.ino` as well:
+
+```ino
+const char access_token[] = "...";
+```
 
 However, these tokens expire every hour. In order to get a longer lasting token you'll need to make your own Facebook application and get an auth token from there.
 
