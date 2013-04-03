@@ -34,17 +34,32 @@ Now open the Arduino IDE and you should see the Lifegraph library as an option w
 
 Wire up the LED in series with the resistor betweein Pin 13 and the ground pin of the Arduino.
 
-Then open up `notificationlight.ino` from the [notificationlight example in this repo](https://github.com/lifegraph/notificationlight/blob/master/notificationlight/notificationlight.ino). You'll need to change the network name and the password 
+Then open up `notificationlight.ino` from the [notificationlight example in this repo](https://github.com/lifegraph/notificationlight/blob/master/notificationlight/notificationlight.ino). You'll need to change the network name and the password to work with your Wifi network
 
 ```ino
 const char mySSID[] = "your_ssid";
 const char myPassword[] = "your_password";
 ```
 
-We'll also need an authentication token from Facebook in order to get the right notification information. For a temporary access token, follow these steps:
+## Authentication with Facebook
+
+We'll also need an authentication token from Facebook in order to get the right notification information. For a temporary access token, follow the 1 hour auth instructions. There's also a Facebook proxy at [lifegraphconnect.com](http://www.lifegraphconnect.com) that will allow you to have 2 month tokens.
+
+### 1 hour authentication
 
 1. Go to the Graph API Explorer: [https://developers.facebook.com/tools/explorer](https://developers.facebook.com/tools/explorer)
 2. request a token with "manage_notifications" and "publish_stream" permissions.
+3. copy that auth token
+4. These tokens only work for 1 hour so they should only be used for testing.
+
+### 2 month authentication
+
+1. Go to [lifegraphconnect.com](http://www.lifegraphconnect.com) and log in
+2. Find the Notification Light tutorial and allow access to it. The app needs your Facebook notification information to work.
+3. Click on the "View Token" button to view your auth token
+4. Copy the auth token
+
+## Setting up your auth token
 
 After you get your access token, you'll need to stick it in the `notificationlight.ino` as well:
 
