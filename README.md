@@ -71,7 +71,7 @@ After you get your access token, you'll need to stick it in the `notificationlig
 const char access_token[] = "...";
 ```
 
-However, these tokens expire every hour. In order to get a longer lasting token you'll need to make your own Facebook application and get an auth token from there.
+Save the code and then load it up onto an Arduino.
 
 ## Further examples
 
