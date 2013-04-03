@@ -1,6 +1,8 @@
 # Notification Light
 
-a light that gets FB notifications
+A light that gets FB notifications
+
+![Light Tutorial](http://i.imgur.com/BJZfxoJ.png)
 
 **What you’ll learn:** How to create a device that lights up when you get a new notification on Facebook
 
@@ -47,8 +49,9 @@ We'll also need an authentication token from Facebook in order to get the right 
 
 ### 1 hour authentication
 
-1. Go to the Graph API Explorer: [https://developers.facebook.com/tools/explorer](https://developers.facebook.com/tools/explorer)
-2. request a token with "manage_notifications" and "publish_stream" permissions.
+1. Go to the Graph API Explorer: [https://developers.facebook.com/tools/explorer](https://developers.facebook.com/tools/explorer) and request a token.
+![get token](https://raw.github.com/lifegraph/notificationlight/master/imgs/get_token.png)
+2. ask for "manage_notifications" permissions.
 3. copy that auth token
 4. These tokens only work for 1 hour so they should only be used for testing.
 
@@ -56,8 +59,11 @@ We'll also need an authentication token from Facebook in order to get the right 
 
 1. Go to [lifegraphconnect.com](http://www.lifegraphconnect.com) and log in
 2. Find the Notification Light tutorial and allow access to it. The app needs your Facebook notification information to work.
+![allow access](https://raw.github.com/lifegraph/notificationlight/master/imgs/allow_access.png)
 3. Click on the "View Token" button to view your auth token
+![view token](https://raw.github.com/lifegraph/notificationlight/master/imgs/view_token.png)
 4. Copy the auth token
+![auth token](https://raw.github.com/lifegraph/notificationlight/master/imgs/auth_token.png)
 
 ## Setting up your auth token
 
@@ -67,7 +73,7 @@ After you get your access token, you'll need to stick it in the `notificationlig
 const char access_token[] = "...";
 ```
 
-However, these tokens expire every hour. In order to get a longer lasting token you'll need to make your own Facebook application and get an auth token from there.
+Save the code and then load it up onto an Arduino.
 
 ## Further examples
 
