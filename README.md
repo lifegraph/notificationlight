@@ -1,6 +1,8 @@
 # Notification Light
 
-a light that gets FB notifications
+A light that gets FB notifications
+
+![Light Tutorial](http://i.imgur.com/BJZfxoJ.png)
 
 **What you’ll learn:** How to create a device that lights up when you get a new notification on Facebook
 
