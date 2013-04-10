@@ -51,8 +51,8 @@ We'll also need an authentication token from Facebook in order to get the right 
 
 1. Go to the Graph API Explorer: [https://developers.facebook.com/tools/explorer](https://developers.facebook.com/tools/explorer) and request a token.
 ![get token](https://raw.github.com/lifegraph/notificationlight/master/imgs/get_token.png)
-2. ask for "manage_notifications" permissions.
-3. copy that auth token
+2. Enable the "manage_notifications" permissions underneath the "Extended Permissions" tab. 
+3. Click "Get Access Token" and copy the auth token that shows up.
 4. These tokens only work for 1 hour so they should only be used for testing.
 
 ### Multiple user, physically-linked access token
