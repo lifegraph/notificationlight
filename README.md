@@ -57,8 +57,8 @@ We'll also need an authentication token from Facebook in order to get the right 
 
 ### Multiple user, physically-linked access token
 
-1. Go to [lifegraphconnect.com](http://www.lifegraphconnect.com) and log in
-2. Find the Notification Light tutorial and allow access to it. The app needs your Facebook notification information to work.
+1. Go to [lifegraphconnect.com/notificationlight](http://www.lifegraphconnect.com/notificationlight) and log in
+2. The app needs your Facebook notification information permission to work.
 ![allow access](https://raw.github.com/lifegraph/notificationlight/master/imgs/allow_access.png)
 3. Click on the "View Token" button to view your auth token
 ![view token](https://raw.github.com/lifegraph/notificationlight/master/imgs/view_token.png)
