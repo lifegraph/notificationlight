@@ -2,7 +2,7 @@
 
 A light that gets FB notifications
 
-![Light Tutorial](http://i.imgur.com/BJZfxoJ.png)
+[![Light Tutorial](http://i.imgur.com/BJZfxoJ.png)](http://www.lifegraphlabs.com/how-to)
 
 **What you’ll learn:** How to create a device that lights up when you get a new notification on Facebook
 
