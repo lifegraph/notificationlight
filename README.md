@@ -36,7 +36,7 @@ Now open the Arduino IDE and you should see the Lifegraph library as an option w
 
 Wire up the LED in series with the resistor betweein Pin 13 and the ground pin of the Arduino.
 
-Then open up `notificationlight.ino` from the [notificationlight example in this repo](https://github.com/lifegraph/notificationlight/blob/master/notificationlight/notificationlight.ino). You'll need to change the network name and the password to work with your Wifi network
+Then open up `notificationlight.ino` from the [notificationlight example in the lifegraph repo](https://raw.github.com/lifegraph/arduino-lifegraph/master/examples/notificationlight/notificationlight.ino). You'll need to change the network name and the password to work with your Wifi network
 
 ```ino
 const char mySSID[] = "your_ssid";
