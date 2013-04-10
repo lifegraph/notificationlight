@@ -47,7 +47,7 @@ const char myPassword[] = "your_password";
 
 We'll also need an authentication token from Facebook in order to get the right notification information. For a temporary access token, follow the 1 hour auth instructions. There's also a Facebook proxy at [lifegraphconnect.com](http://www.lifegraphconnect.com) that will allow you to have 2 month tokens.
 
-### 1 hour authentication
+### Single user, temporary access token
 
 1. Go to the Graph API Explorer: [https://developers.facebook.com/tools/explorer](https://developers.facebook.com/tools/explorer) and request a token.
 ![get token](https://raw.github.com/lifegraph/notificationlight/master/imgs/get_token.png)
@@ -55,7 +55,7 @@ We'll also need an authentication token from Facebook in order to get the right 
 3. copy that auth token
 4. These tokens only work for 1 hour so they should only be used for testing.
 
-### 2 month authentication
+### Multiple user, physically-linked access token
 
 1. Go to [lifegraphconnect.com](http://www.lifegraphconnect.com) and log in
 2. Find the Notification Light tutorial and allow access to it. The app needs your Facebook notification information to work.
