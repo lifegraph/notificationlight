@@ -14,8 +14,9 @@ A light that gets FB notifications
 
 ## Prerequisites
 
-Completed the [hardware tutorial](https://github.com/lifegraph/hw-tutorial) and have a set up Arduino that can talk to the internet. 
+Completed the [Wifly Setup tutorial](https://github.com/lifegraph/arduino-wifi-setup) and have a set up Arduino that can talk to the internet. 
 
+<!--
 ## Making HTTP Requests
 
 We'll be using [WiFlyHQ](https://github.com/harlequin-tech/WiFlyHQ) as our library for interfacing with the WiFly module. The setup of the library is covered in the [hardware tutorial](https://github.com/lifegraph/hw-tutorial).
@@ -31,7 +32,7 @@ In order to install the library, you'll need to:
 5. Restart the Arduino IDE
 
 Now open the Arduino IDE and you should see the Lifegraph library as an option when you go to Sketch -> Import Library
-
+-->
 ## The Arduino
 
 Wire up the LED in series with the resistor betweein Pin 13 and the ground pin of the Arduino.
